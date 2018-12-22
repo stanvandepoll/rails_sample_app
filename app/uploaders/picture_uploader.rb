@@ -6,7 +6,8 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
-    storage :fog
+    storage :file
+    # storage :fog Need to get AWS S3 bucket to work, is a pain in the ass
   else
     storage :file
   end
